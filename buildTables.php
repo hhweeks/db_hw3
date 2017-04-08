@@ -14,6 +14,8 @@ echo "Connected successfully\n";
 cleanStart($conn);
 importToTable($conn);
 
+echo "Complete\n";
+
 function cleanStart($conn){
     $sql = "drop table Product";
     if(!mysql_query($sql, $conn)){
