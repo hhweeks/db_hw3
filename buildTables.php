@@ -6,10 +6,16 @@ $db = $username;
 //$data_file = '/Users/hhweeks/Documents/University/Databases564/bills/hconres/hconres1/data.json';
 $dir = '/Users/hhweeks/Documents/University/Databases564/bills';
 
-$conn =  mysql_connect($servername, $username,$password,"") or die('Could not connect: ' . mysql_error());
+$conn =  mysql_connect($servername, $username,$password,"> /Users/hhweeks/Documents/University/Databases564/hw3/hw3.log") or die('Could not connect: ' . mysql_error());
 mysql_select_db($username, $conn);
 
 echo "Connected successfully\n";
+
+/*
+if(!mysql_query("tee /Users/hhweeks/Documents/University/Databases564/hw3/hw3.log", $conn)){
+    echo('Error : ' . mysql_error()) . "\n";
+}
+*/
 
 cleanStart($conn);
 importToTable($conn);
